@@ -5,7 +5,7 @@ SELECT * From animals WHERE name LIKE '%mon';
 /*List the name of all animals born between 2016 and 2019*/
 SELECT name From animals WHERE EXTRACT(YEAR FROM date_of_birth) BETWEEN 2016 AND 2019;
 /*List the name of all animals that are neutered and have less than 3 escape attempts*/
-SELECT name from animals where neutered=true and escape_attempts>3;
+SELECT name from animals where neutered=true and escape_attempts<3;
 /*List the date of birth of all animals named either "Agumon" or "Pikachu"*/
 select date_of_birth from animals where name in ('Agumon', 'Pikachu');
 /*List name and escape attempts of animals that weigh more than 10.5kg*/
