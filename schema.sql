@@ -11,4 +11,4 @@ CREATE TABLE animals (
 alter table
 	animals
 add
-	species varchar(100) NOT NULL;
+	species varchar(100);
