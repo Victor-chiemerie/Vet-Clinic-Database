@@ -21,6 +21,7 @@ WHERE
     AND 2019;
 
 /*List the name of all animals that are neutered and have less than 3 escape attempts*/
+
 SELECT
     name
 from
@@ -28,7 +29,7 @@ from
 where
     neutered = true
     and escape_attempts > 3;
-
+    
 /*List the date of birth of all animals named either "Agumon" or "Pikachu"*/
 select
     date_of_birth
