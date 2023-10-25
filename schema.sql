@@ -1,7 +1,6 @@
 /* Database schema to keep the structure of entire database. */
-
 CREATE TABLE animals (
-    id INT NOT NULL,
+	id INT NOT NULL,
 	name varchar(100) NOT NULL,
 	date_of_birth DATE NOT NULL,
 	escape_attempts INT NOT NULL,
@@ -9,3 +8,7 @@ CREATE TABLE animals (
 	weight_kg DECIMAL(5, 2) NOT NULL
 );
 
+alter table
+	animals
+add
+	species varchar(100);
