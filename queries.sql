@@ -196,17 +196,26 @@ from
     right join owners on animals.owner_id = owners.id;
 
 /* How many animals are there per species? */
-/* Pokemon */
-select
+SELECT
     species.name,
-    animals.name
-from
+    COUNT(animals.id) AS animal_count
+FROM
     animals
-    join species on animals.species_id = species.id
-where
-    species.name = 'Pokemon';
+    JOIN species ON animals.species_id = species.id
+GROUP BY
+    species.name;
 
-/* Digimon */
+/* Pokemon */
+/*select
+ species.name,
+ animals.name
+ from
+ animals
+ join species on animals.species_id = species.id
+ where
+ species.name = 'Pokemon';
+ 
+ /* Digimon */
 select
     species.name,
     animals.name
@@ -216,6 +225,7 @@ from
 where
     species.name = 'Digimon';
 
+* /
 /* List all Digimon owned by Jennifer Orwell */
 select
     animals.name,
