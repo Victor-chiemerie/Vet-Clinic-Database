@@ -12,3 +12,53 @@ alter table
 	animals
 add
 	species varchar(100);
+
+/* Create a table named owners with the following columns */
+CREATE TABLE owners (
+	id SERIAL PRIMARY KEY,
+	full_name VARCHAR(50) NOT NULL,
+	age INT NOT NULL
+);
+
+/* Create a table named species with the following columns */
+CREATE TABLE species (
+	id SERIAL PRIMARY KEY,
+	name VARCHAR(50) NOT NULL
+);
+
+/* Make sure that id is set as autoincremented PRIMARY KEY */
+alter table
+	animals
+add
+	column new_id serial primary key;
+
+update
+	animals
+set
+	new_id = id;
+
+alter table
+	animals drop column id;
+
+alter table
+	animals rename column new_id to id;
+
+/* Remove column species */
+alter table
+	animals drop column species;
+
+/* Add column species_id which is a foreign key referencing species table */
+alter table
+	animals
+ADD
+	COLUMN species_id int,
+add
+	constraint fk_specie_id foreign key(species_id) references species(id);
+
+/* Add column owner_id which is a foreign key referencing the owners table */
+alter table
+	animals
+ADD
+	COLUMN owner_id int,
+add
+	constraint fk_owner_id foreign key(owner_id) references owners(id);

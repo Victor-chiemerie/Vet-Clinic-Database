@@ -84,6 +84,8 @@ After you're finished please remove all the comments and instructions!
 - **Animals Table**
 - **Use transactions to update and delete records**
 - **Use aggregate functions and GROUP BY to answer analytical questions**
+- **query multiple tables**
+
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -124,7 +126,6 @@ Clone this repository to your desired folder:
 
 ## 🔭 Future Features <a name="future-features"></a>
 
-- [ ] **query multiple tables**
 - [ ] **add "join table" for visits**
 - [ ] **add database performance audit**
 
