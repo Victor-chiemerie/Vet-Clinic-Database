@@ -196,6 +196,7 @@ from
     right join owners on animals.owner_id = owners.id;
 
 /* How many animals are there per species? */
+/* Pokemon */
 select
     species.name,
     animals.name
@@ -205,6 +206,7 @@ from
 where
     species.name = 'Pokemon';
 
+/* Digimon */
 select
     species.name,
     animals.name
@@ -248,6 +250,6 @@ FROM
 GROUP BY
     o.full_name
 ORDER BY
-    num_animals DESC
+    animals_owned DESC
 LIMIT
     1;
