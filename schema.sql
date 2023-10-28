@@ -62,3 +62,28 @@ ADD
 	COLUMN owner_id int,
 add
 	constraint fk_owner_id foreign key(owner_id) references owners(id);
+
+/* Create a table named vets with the following columns */
+create table vets (
+	id serial primary key,
+	name varchar(50) not null,
+	age int not null,
+	date_of_graduation date not null
+);
+
+/* Create join table with both columns as foreign keys to handle specialization */
+CREATE TABLE specializations (
+	vet_id bigint,
+	species_id bigint,
+	CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets(id),
+	CONSTRAINT fk_species_id FOREIGN KEY (species_id) REFERENCES species(id)
+);
+
+/* Create join table with both columns as foreign keys to handle visits */
+CREATE TABLE visits (
+	animal_id bigint,
+	vet_id bigint,
+	date_of_visitation date not null,
+	CONSTRAINT fk_animal_id FOREIGN KEY (animal_id) REFERENCES animals(id),
+	CONSTRAINT fk_vet_id FOREIGN KEY (vet_id) REFERENCES vets(id)
+);
